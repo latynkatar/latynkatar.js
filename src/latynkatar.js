@@ -144,4 +144,4 @@ function convertCyrToLat(inputText, classic=true) {
   return convertedText;
 };
 
-// export default convertCyrToLat;
+export default convertCyrToLat;

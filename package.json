@@ -2,7 +2,7 @@
   "name": "latynkatar.js",
   "version": "0.0.1",
   "description": "Маленькая і простая бібліятэка для канвертацыі кірыліцы ў сучасную (з ž, č, š і v) і класічную (з ż, cz, sz і w) лацінку.",
-  "main": "latynkatar.js",
+  "main": "src/latynkatar.js",
   "scripts": {
     "test": "npx -i jest"
   },

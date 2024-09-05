@@ -1,6 +1,6 @@
-//const convertCyrToLat = require("./latynkatar");
+//const convertCyrToLat = require("../src/latynkatar");
 
-import convertCyrToLat from "./latynkatar";
+import convertCyrToLat from "../src/latynkatar";
 
 // Узор узяты з часопіса PAMYŁKA:
 // https://github.com/PAMYLKA-ZIN/pamylka-number-3/tree/main/PAMYLKA_ZIN_3_FOR_SHARING
