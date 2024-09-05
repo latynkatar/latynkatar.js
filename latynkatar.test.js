@@ -79,7 +79,7 @@ describe("Тэсты на галосныя", () => {
 
 describe("Тэсты на зычныя", () => {
   test("Л", () => {
-    expect(convertCyrToLat("ЛаЭлЯЛуЛіЛюЛЁлЕлЬ лЛя")).toBe("ŁaElAŁuLiLuLOlEl lLa")
+    expect(convertCyrToLat("ЛаЭлЯЛуЛіЛюЛЁлЕлЬ лЛя Лсі")).toBe("ŁaElAŁuLiLuLOlEl lLa Lsi")
   });
 
   test("Х", () => {
