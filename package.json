@@ -1,0 +1,22 @@
+{
+  "name": "latynkatar.js",
+  "version": "0.0.1",
+  "description": "Маленькая і простая бібліятэка для канвертацыі кірыліцы ў сучасную (з ž, č, š і v) і класічную (з ż, cz, sz і w) лацінку.",
+  "main": "latynkatar.js",
+  "scripts": {
+    "test": "npx -i jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/measles/latynkatar.js.git"
+  },
+  "author": "Andrej Zacharevicz",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/measles/latynkatar.js/issues"
+  },
+  "homepage": "https://github.com/measles/latynkatar.js#readme",
+  "devDependencies": {
+    "jest-cli": "^29.7.0"
+  }
+}
