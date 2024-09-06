@@ -20,6 +20,7 @@ const pravilyKanvertacyi = {
   "ф": "f",
   "ч": "č",
   "ш": "š",
+  "х": "ch",
 }
 
 const jotavanyjaLitary = {
@@ -50,6 +51,8 @@ const zycznyjaZTranzitam = [
   "ч",
   "ш",
 ]
+
+const halosnyja = ["а", "е", "ё", "і", "у", "ы", "э", "ю", "я"]
 
 class CurrentLetter {
   constructor(current) {
@@ -84,18 +87,39 @@ function convert_l(nextLetter, nextNextLetter) {
       break;
     // Ва ўсіх астатніх выпадках
     default:
-      console.log((nextLetter && nextLetter in zycznyjaZTranzitam))
-      console.log((nextNextLetter && (nextNextLetter in jotavanyjaLitary || nextNextLetter == "ь")))
-      console.log("!", (nextLetter && (nextLetter in jotavanyjaLitary ||  nextLetter == "ь")), (nextLetter && nextLetter in zycznyjaZTranzitam) && (nextNextLetter && (nextNextLetter in jotavanyjaLitary || nextNextLetter == "ь")))
       convertedLetter = "ł";
   }
   return convertedLetter
 }
 
+function convertJotavanyja(currentLetter, previousLetter) {
+  previousLetter = previousLetter ? previousLetter.toLowerCase() : previousLetter;
+  let baseLetter = "";
+  let secondLetter = "";
+
+  if (
+    (!previousLetter ||
+    halosnyja.find((letter) => letter == previousLetter) ||
+    !previousLetter.match(/[а-я]/i) ||
+    previousLetter == "'" ||
+    previousLetter == "ь") &&
+    currentLetter != "і"
+  ) {
+    baseLetter = "j";
+  } else {
+    baseLetter = "i";
+  }
+
+  secondLetter = jotavanyjaLitary[currentLetter];
+
+  if (previousLetter && previousLetter == "л" && currentLetter != "і") {
+    baseLetter = "";
+  }
+
+  return baseLetter + secondLetter;
+}
 
 function convertCyrToLat(inputText, classic=true) {
-  console.log("л" in zycznyjaZTranzitam)
-  console.log("с" in zycznyjaZTranzitam)
   if (typeof inputText != "string"){
     throw new TypeError(`Struing expected, but instead got ${toString(inputText)} with type ${typeof inputText}`);
   }
@@ -129,8 +153,14 @@ function convertCyrToLat(inputText, classic=true) {
         convertedLetter = pravilyKanvertacyi[currentLetter.lower]
         break;
       case (currentLetter.lower == "л"):
-        console.log("position", i, previousLetter, currentLetter.letter, nextLetter)
         convertedLetter = convert_l(nextLetter, nextNextLetter);
+        break;
+      // Не маюць літар-адпаведнікаў у лацінцы
+      case (currentLetter.lower == "ь" || currentLetter.letter == "'"):
+        convertedLetter = "";
+        break;
+      case (currentLetter.lower in jotavanyjaLitary):
+        convertedLetter = convertJotavanyja(currentLetter.lower, previousLetter);
         break;
       default:
         convertedLetter = currentLetter.letter;
