@@ -19,6 +19,7 @@
   "devDependencies": {
     "jest-cli": "^29.7.0",
     "prettier": "3.3.3",
-    "babel": "^6.23.0"
+    "babel": "^6.23.0",
+    "@babel/plugin-proposal-export-default-from": "^7.24.7"
   }
 }
