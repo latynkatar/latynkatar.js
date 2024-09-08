@@ -69,41 +69,49 @@ Załatymi ahniami!
 
 describe("Тэсты на галосныя", () => {
   test("Ю", () => {
-    expect(convertCyrToLat("ЮрліВец лЮбіЦь лІю п'ю")).toBe("JurliViec lUbiĆ lIju pju")
+    expect(convertCyrToLat("ЮрліВец лЮбіЦь лІю п'ю")).toBe(
+      "JurliViec lUbiĆ lIju pju",
+    );
   });
 
   test("Я", () => {
-    expect(convertCyrToLat("Яз'яваЗЯпазЬяВА")).toBe("JazjavaZIapaźjaVA")
+    expect(convertCyrToLat("Яз'яваЗЯпазЬяВА")).toBe("JazjavaZIapaźjaVA");
   });
 });
 
 describe("Тэсты на зычныя", () => {
   test("Л", () => {
-    expect(convertCyrToLat("ЛаЭлЯЛуЛіЛюЛЁлЕлЬ лЛя Лсі")).toBe("ŁaElAŁuLiLuLOlEl lLa Lsi")
+    expect(convertCyrToLat("ЛаЭлЯЛуЛіЛюЛЁлЕлЬ лЛя Лсі")).toBe(
+      "ŁaElAŁuLiLuLOlEl lLa Lsi",
+    );
   });
 
   test("Х", () => {
-    expect(convertCyrToLat("ХаХу ХЫВАХххххх Хіх")).toBe("ChaChu ChYVAChchchchchch Chich")
+    expect(convertCyrToLat("ХаХу ХЫВАХххххх Хіх")).toBe(
+      "ChaChu ChYVAChchchchchch Chich",
+    );
   });
 
   test("Ш", () => {
-    expect(convertCyrToLat("ШашуШышшшшшшш")).toBe("ŠašuŠyššššššš")
+    expect(convertCyrToLat("ШашуШышшшшшшш")).toBe("ŠašuŠyššššššš");
   });
 
   test("Ч", () => {
-    expect(convertCyrToLat("чАЧыЧУ")).toBe("čAČyČU")
+    expect(convertCyrToLat("чАЧыЧУ")).toBe("čAČyČU");
   });
 
   test("Ж", () => {
-    expect(convertCyrToLat("жУрАвІнЫЖэЖЫ")).toBe("žUrAvInYŽeŽY")
+    expect(convertCyrToLat("жУрАвІнЫЖэЖЫ")).toBe("žUrAvInYŽeŽY");
   });
 
   test("В", () => {
-    expect(convertCyrToLat("войт і Ваявода")).toBe("vojt i Vajavoda")
+    expect(convertCyrToLat("войт і Ваявода")).toBe("vojt i Vajavoda");
   });
 
   test("мяккасць", () => {
-    expect(convertCyrToLat("снег смех поспех святы")).toBe("śnieh śmiech pośpiech śviaty")
+    expect(convertCyrToLat("снег смех поспех святы")).toBe(
+      "śnieh śmiech pośpiech śviaty",
+    );
   });
 });
 
