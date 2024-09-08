@@ -74,6 +74,29 @@ const zycznyjaZTranzitam = [
 
 const halosnyja = ["а", "е", "ё", "і", "у", "ы", "э", "ю", "я"];
 
+const mohućŹmiakčacca = {
+  н: {
+    ćviordy: "n",
+    miakki: "ń",
+  },
+  с: {
+    ćviordy: "s",
+    miakki: "ś",
+  },
+  ц: {
+    ćviordy: "c",
+    miakki: "ć",
+  },
+  з: {
+    ćviordy: "z",
+    miakki: "ź",
+  },
+  л: {
+    ćviordy: "ł",
+    miakki: "l",
+  },
+};
+
 class CurrentLetter {
   constructor(current) {
     this.letter = current;
@@ -88,30 +111,6 @@ class CurrentLetter {
 
 function capitalize(text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
-}
-
-function convert_l(nextLetter, nextNextLetter) {
-  nextLetter = nextLetter ? nextLetter.toLowerCase() : undefined;
-  nextNextLetter = nextNextLetter ? nextNextLetter.toLowerCase() : undefined;
-
-  let convertedLetter = "";
-  switch (true) {
-    // Калі наступнай ідзе ётаваная літара ці мяккі знак
-    case nextLetter && (nextLetter in jotavanyjaLitary || nextLetter == "ь"):
-      convertedLetter = "l";
-      break;
-    // Калі наступная зычная літара мяккая і не г, к, х
-    case nextLetter &&
-      zycznyjaZTranzitam.find((litara) => litara == nextLetter) &&
-      nextNextLetter &&
-      (nextNextLetter in jotavanyjaLitary || nextNextLetter == "ь"):
-      convertedLetter = "l";
-      break;
-    // Ва ўсіх астатніх выпадках
-    default:
-      convertedLetter = "ł";
-  }
-  return convertedLetter;
 }
 
 function convertJotavanyja(currentLetter, previousLetter) {
@@ -178,21 +177,42 @@ function convertCyrToLat(inputText, classic = true) {
     }
 
     switch (true) {
+      // маюць просты і безальтэрнатыўны адпаведнік
       case currentLetter.lower in pravilyKanvertacyi:
         convertedLetter = pravilyKanvertacyi[currentLetter.lower];
         break;
-      case currentLetter.lower == "л":
-        convertedLetter = convert_l(nextLetter, nextNextLetter);
-        break;
-      // Не маюць літар-адпаведнікаў у лацінцы
       case currentLetter.lower == "ь" || currentLetter.letter == "'":
         convertedLetter = "";
         break;
+      // літары з i/j: і, й, е, ё, ю, я
       case currentLetter.lower in jotavanyjaLitary:
         convertedLetter = convertJotavanyja(
           currentLetter.lower,
           previousLetter,
         );
+        break;
+      // Могуць пазначацца як мяккія
+      case currentLetter.lower in mohućŹmiakčacca:
+        if (
+          // змякчаюцца калі стаяць перад мяккім знакам
+          (nextLetter && nextLetter.toLowerCase() == "ь") ||
+          // а Л яшчэ і перад ётаванымі літарамі
+          (currentLetter.lower == "л" &&
+            nextLetter &&
+            nextLetter.toLowerCase() in jotavanyjaLitary) ||
+          // Калі наступная зычная літара мяккая і не г, к, х
+          (nextLetter &&
+            nextNextLetter &&
+            zycznyjaZTranzitam.find(
+              (litara) => litara == nextLetter.toLowerCase(),
+            ) &&
+            (nextNextLetter in jotavanyjaLitary ||
+              nextNextLetter.toLowerCase() == "ь"))
+        ) {
+          convertedLetter = mohućŹmiakčacca[currentLetter.lower].miakki;
+        } else {
+          convertedLetter = mohućŹmiakčacca[currentLetter.lower].ćviordy;
+        }
         break;
       default:
         convertedLetter = currentLetter.letter;
