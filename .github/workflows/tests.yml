@@ -1,0 +1,23 @@
+name: Test source code
+
+on:
+  push:
+    branches:
+      - "**"
+      - "*"
+
+jobs:
+  pretty:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instasll dependancies
+        run: |
+          npm install --save-dev --seve-extract 'prettier@3.3.3' jest
+
+      - name: Check if all is pretty
+        run: npx prettier . --check
+
+      - name: Run unit tests
+        run: npx jest
