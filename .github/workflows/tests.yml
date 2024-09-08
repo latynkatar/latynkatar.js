@@ -12,12 +12,21 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
       - name: Instasll dependancies
-        run: |
-          npm install --save-dev --seve-extract 'prettier@3.3.3' jest
+        run: npm install --save-dev --seve-extract 
 
       - name: Check if all is pretty
         run: npx prettier . --check
+  
+  ugly-unit-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instasll dependancies
+        run: npm install --save-dev
 
       - name: Run unit tests
         run: npx jest
