@@ -34,6 +34,6 @@
 
 ## Ліцэнзія
 
-Copyright Andrej Zacharevicz, 2023
+Copyright Andrej Zacharevicz, 2024
 
 [![LGPL v3.0](https://www.gnu.org/graphics/lgplv3-with-text-154x68.png)](https://github.com/measles/latynkatar/blob/main/LICENSE) ад [GNU](https://www.gnu.org/licenses/lgpl-3.0.html)
