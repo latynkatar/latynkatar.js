@@ -1,26 +1,50 @@
 {
-  "name": "latynkatar.js",
-  "version": "0.0.1",
-  "description": "Маленькая і простая бібліятэка для канвертацыі кірыліцы ў сучасную (з ž, č, š і v) і класічную (з ż, cz, sz і w) лацінку.",
+  "name": "latynkatar",
+  "version": "1.0.1",
+  "description": "Маленькая і простая бібліятэка для канвертацыі кірыліцы ў сучасную, 'чэшскую' лацінку (з ž, č, š і v) .",
   "main": "src/latynkatar.js",
   "scripts": {
     "test": "npx -i jest"
   },
+  "keywords": [
+    "лацінка",
+    "канвертар",
+    "беларуская",
+    "беларуская лацінка",
+    "lacinka",
+    "łacinka",
+    "biełąruskaja łacinka",
+    "bielaruskaja lacinka",
+    "Latin",
+    "Cyrrilic"
+  ],
+  "files": [
+    "src/latynkatar.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "require": "./src/latynkatar.js",
+      "default": "./src/latynkatar.js"
+    },
+    "./package.json": "./package.json"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/measles/latynkatar.js.git"
+    "url": "git+https://github.com/latynkatar/latynkatar.js.git"
   },
-  "author": "Andrej Zacharevicz",
+  "author": "Łatynkatar group",
   "license": "LGPL-3.0",
   "bugs": {
-    "url": "https://github.com/measles/latynkatar.js/issues"
+    "url": "https://github.com/latynkatar/latynkatar.js/issues"
   },
-  "homepage": "https://github.com/measles/latynkatar.js#readme",
+  "homepage": "https://github.com/latynkatar/latynkatar.js#readme",
   "devDependencies": {
-    "jest-cli": "^29.7.0",
-    "prettier": "3.3.3",
-    "babel": "^6.23.0",
     "@babel/plugin-proposal-export-default-from": "^7.24.7",
-    "@babel/preset-env": "^7.25.4"
+    "@babel/preset-env": "^7.25.4",
+    "babel": "^6.23.0",
+    "jest-cli": "^29.7.0",
+    "prettier": "^3.3.3"
   }
 }

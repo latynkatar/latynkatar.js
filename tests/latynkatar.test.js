@@ -15,12 +15,10 @@ in the repo, see <https://github.com/measles/latynkatar.js/blob/main/LICENSE>.
 You should have received a copy of the GNU Lesser General Public License v3 
 (LGPLv3) along with Łatynkatar. If not, see <https://www.gnu.org/licenses/>. 
 
-:copyright: (c) 2024 by Andrej Zacharevicz.
+:copyright: (c) 2025 by Łatynkatar.
 */
 
-//const convertCyrToLat = require("../src/latynkatar");
-
-import convertCyrToLat from "../src/latynkatar";
+import { convertCyrToLat } from "../src/latynkatar";
 
 // Узор узяты з часопіса PAMYŁKA:
 // https://github.com/PAMYLKA-ZIN/pamylka-number-3/tree/main/PAMYLKA_ZIN_3_FOR_SHARING

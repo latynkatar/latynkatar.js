@@ -2,24 +2,25 @@
 
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://github.com/measles/latynkatar.js/blob/main/LICENSE)
 
-Маленькая і простая бібліятэка для канвертацыі кірыліцы ў сучасную (з ž, č, š і v) і класічную (з ż, cz, sz і w) лацінку.
+Маленькая і простая бібліятэка для канвертацыі кірыліцы ў сучасную, "чэшскую" лацінку (з ž, č, š і v).
 
 ## Усталёўка
 
-Трэба апісаць
+Пакет апублікаваны ў NPM. Інсталяцыя трывіяльная:
+
+```
+npm install latynkatar
+```
 
 ## Ужыванне
 
 Усё досыць просталінейна:
 
-```python
->>> from latynkatar import Cyr2Lat
->>> # сучасная
->>> Cyr2Lat.convert("Але лёс склаўся так, што хрусць - і папалам!")
-'Ale los skłaŭsia tak, što chruść - i papałam!'
->>> # класічная
->>> Cyr2Lat.convert_classic("Але лёс склаўся так, што хрусць - і папалам!")
-'Ale los skłaŭsia tak, szto chruść - i papałam!'
+```js
+import convertCyrToLat from "../src/latynkatar";
+
+a = convertCyrToLat("Але лёс склаўся так, што хрусць - і папалам!");
+("Ale los skłaŭsia tak, što chruść - i papałam!");
 ```
 
 Асноўныя параметры працы бібліятэкі:
@@ -30,10 +31,10 @@
 
 ## Анлайн канвертар
 
-У якасці ўзору ўжывання бібліятэкі ці анлайн канвертара створанага на яе аснове магу прапанаваць паглядзець на сайт [latynkatar.org](https://latynkatar.org). Зыходнікі даступныя [тут](https://github.com/measles/latynkatar_site).
+У якасці анлайн канвертара створанага аснове версіі бібліяткі на Python магу прапанаваць паглядзець на сайт [latynkatar.org](https://latynkatar.org). Зыходнікі сайта даступныя [тут](https://github.com/measles/latynkatar_site).
 
 ## Ліцэнзія
 
-Copyright Andrej Zacharevicz, 2024
+Copyright [Łatynkatar group](https://github.com/latynkatar), 2025
 
 [![LGPL v3.0](https://www.gnu.org/graphics/lgplv3-with-text-154x68.png)](https://github.com/measles/latynkatar/blob/main/LICENSE) ад [GNU](https://www.gnu.org/licenses/lgpl-3.0.html)
