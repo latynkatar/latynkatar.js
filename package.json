@@ -1,7 +1,7 @@
 {
   "name": "latynkatar",
-  "version": "1.0.0",
-  "description": "Маленькая і простая бібліятэка для канвертацыі кірыліцы ў сучасную, 'чэшскую' (з ž, č, š і v) .",
+  "version": "1.0.1",
+  "description": "Маленькая і простая бібліятэка для канвертацыі кірыліцы ў сучасную, 'чэшскую' лацінку (з ž, č, š і v) .",
   "main": "src/latynkatar.js",
   "scripts": {
     "test": "npx -i jest"
@@ -22,7 +22,6 @@
     "src/latynkatar.js",
     "LICENSE",
     "README.md"
-
   ],
   "exports": {
     ".": {
