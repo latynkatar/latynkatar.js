@@ -1,0 +1,22 @@
+name: NPM packaging and release publication
+
+on:
+  release:
+    types: ["published"]
+
+permissions:
+  contents: write
+
+jobs:
+  build_and_publish:
+    runs-on: node-latest
+
+    steps:
+      - name: Prepare to log into the NPM registy
+        run: npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+
+      - name: Log intro registy
+        run: npm login
+
+      - name: Build and publish
+        run: npm publish --access=public

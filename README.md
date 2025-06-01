@@ -31,7 +31,7 @@ a = convertCyrToLat("Але лёс склаўся так, што хрусць - 
 
 ## Анлайн канвертар
 
-У якасці анлайн канвертара створанага аснове версіі бібліяткі на Python магу прапанаваць паглядзець на сайт [latynkatar.org](https://latynkatar.org). Зыходнікі сайта даступныя [тут](https://github.com/measles/latynkatar_site).
+У якасці анлайн канвертара створанага на аснове [версіі бібліяткі на Python](https://github.com/latynkatar/latynkatar) магу прапанаваць паглядзець на сайт [latynkatar.org](https://latynkatar.org). Зыходнікі сайта даступныя [тут](https://github.com/measles/latynkatar_site).
 
 ## Ліцэнзія
 
