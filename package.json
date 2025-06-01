@@ -18,6 +18,12 @@
     "Latin",
     "Cyrrilic"
   ],
+  "files": [
+    "src/latynkatar.js",
+    "LICENSE",
+    "README.md"
+
+  ],
   "exports": {
     ".": {
       "require": "./src/latynkatar.js",
