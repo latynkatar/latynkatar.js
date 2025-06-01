@@ -15,7 +15,7 @@ in the repo, see <https://github.com/measles/latynkatar.js/blob/main/LICENSE>.
 You should have received a copy of the GNU Lesser General Public License v3 
 (LGPLv3) along with Łatynkatar. If not, see <https://www.gnu.org/licenses/>. 
 
-:copyright: (c) 2024 by Andrej Zacharevicz.
+:copyright: (c) 2025 by Łatynkatar.
 */
 
 const pravilyKanvertacyi = {
@@ -142,20 +142,12 @@ function convertJotavanyja(currentLetter, previousLetter) {
   return baseLetter + secondLetter;
 }
 
-function convertCyrToLat(inputText, classic = true) {
+export function convertCyrToLat(inputText) {
   if (typeof inputText != "string") {
     throw new TypeError(
       `Struing expected, but instead got ${toString(inputText)} with type ${typeof inputText}`,
     );
   }
-
-  if (typeof classic != "boolean") {
-    throw new TypeError(
-      "Classic should be set to some boolean value, instead was",
-      typeof classic,
-    );
-  }
-
   let convertedText = "";
 
   for (let i = 0; i < inputText.length; i++) {
